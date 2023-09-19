@@ -58,18 +58,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        elevation: 2,
-        title: const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Icon(Icons.menu),
-            CircleAvatar(
-              backgroundColor: Colors.deepPurpleAccent,
-            ),
-          ],
-        ),
+        elevation: 2, title: Text("Todo List"), centerTitle: true,
         // backgroundColor: Colors.white24,
-        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
@@ -83,8 +73,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: ListView(
                       children: [
                         Container(
-                          margin: EdgeInsets.only(top: 48, bottom: 24),
-                          child: Text("All Todo's"),
+                          margin: EdgeInsets.only(top: 24, bottom: 24),
+                          child: Text(
+                            "All Todo's",
+                            style: TextStyle(
+                                fontSize: 24, fontWeight: FontWeight.w600),
+                          ),
                         ),
                         for (ToDo todo in _foundTodo.reversed)
                           TodoItem(
